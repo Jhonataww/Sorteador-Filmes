@@ -1,0 +1,91 @@
+if __name__ == "__main__":
+root = tk.Tk()
+app = SorteadorFilme(root)
+root.mainloop()
+
+
+é uma convenção comum em Python e é usado para determinar se o script está sendo executado
+como o programa principal ou se está sendo importado como um módulo em outro script.
+
+Quando um arquivo Python é executado, o interpretador define automaticamente a
+variável especial __name__. Se o script estiver sendo executado como o programa principal,
+o valor de __name__ será igual a "__main__". Se o script estiver sendo importado como um
+módulo em outro script, o valor de __name__ será o nome do próprio módulo.
+
+Portanto, if __name__ == "__main__": é uma maneira de verificar
+se o script está sendo executado independentemente (não importado por outro script).
+Isso é útil porque permite que você tenha código que só é executado quando o script é executado diretamente,
+e não quando é importado como um módulo. No exemplo que você forneceu, a criação da instância SorteadorFilme
+e a chamada do loop principal (root.mainloop()) só ocorrerão quando o script for executado diretamente,
+não quando é importado por outro script.
+
+
+
+Em aplicações Tkinter, o termo "root" refere-se à janela principal ou à instância principal da classe `Tk`.
+
+Quando você está criando uma interface gráfica usando Tkinter,
+geralmente você começa criando uma instância da classe `Tk` para representar a janela principal da sua aplicação.
+Essa instância é comumente chamada de "root". Aqui está um exemplo:
+
+
+import tkinter as tk
+root = tk.Tk()
+root.title("Minha Aplicação")
+# Aqui você adicionaria outros componentes à janela principal
+root.mainloop()
+
+
+Neste exemplo, `root` é a instância da classe `Tk`, que representa a janela principal da aplicação.
+A partir dela, você pode adicionar vários componentes, como rótulos (`Label`), botões (`Button`),
+campos de entrada (`Entry`), etc.
+
+Quando você instancia outros widgets (como `Label`, `Button`, etc.)
+dentro da aplicação Tkinter, você geralmente passa a instância do "root" como o primeiro argumento.
+Isso estabelece a relação de parentesco, indicando que esses widgets pertencem à janela principal.
+
+Exemplo com um rótulo (`Label`):
+
+
+import tkinter as tk
+root = tk.Tk()
+root.title("Minha Aplicação")
+label = tk.Label(root, text="Olá, Tkinter!")
+label.pack()
+root.mainloop()
+
+
+Neste exemplo, o rótulo `Label` é associado à instância `root`.
+O método `pack()` é então chamado para organizar o widget dentro da janela principal.
+
+Em resumo, "root" é a instância principal da classe `Tk` que representa a janela principal da aplicação
+Tkinter. Ao instanciar outros widgets, você geralmente passa a instância "root" como o pai desses widgets
+para indicar que eles pertencem à janela principal.
+
+
+
+algumas informações adicionais que podem ser úteis ou esclarecedoras ao trabalhar com Tkinter ou programação em Python em geral:
+
+1. **Widgets e Layout:**
+   - Tkinter oferece diversos widgets para construir interfaces gráficas, como botões, rótulos, campos de entrada, listas e muito mais.
+   - O gerenciador de geometria `pack()` é utilizado para organizar widgets dentro de contêineres, como a janela principal.
+
+2. **Eventos e Tratamento de Eventos:**
+   - Tkinter é baseado em eventos, como cliques de mouse e pressionamentos de tecla. Você pode vincular funções a esses eventos usando métodos como `bind()` ou atributos como `command`.
+
+3. **Orientação a Objetos em Tkinter:**
+   - Pode ser útil organizar seu código usando programação orientada a objetos, onde você cria uma classe para a aplicação e encapsula funcionalidades em métodos.
+
+4. **Estilos e Temas:**
+   - Tkinter permite personalizar a aparência da interface gráfica, incluindo cores, fontes e estilos de widgets. Você pode usar temas predefinidos ou criar seus próprios estilos.
+
+5. **Documentação e Recursos Online:**
+   - A documentação oficial do Tkinter é um recurso valioso: [Tkinter Documentation](https://docs.python.org/3/library/tkinter.html).
+   - Há muitos tutoriais e recursos online disponíveis para ajudar a aprender Tkinter, desde vídeos tutoriais até exemplos de código.
+
+6. **Desenvolvimento de Aplicações Completas:**
+   - Além de aplicativos simples, Tkinter também é adequado para o desenvolvimento de aplicações mais complexas e completas, como editores de texto, aplicativos de gerenciamento de dados, etc.
+
+7. **Outras Bibliotecas GUI em Python:**
+   - Se você procura uma experiência de desenvolvimento mais moderna, considere explorar bibliotecas GUI mais recentes, como PyQt, Kivy ou wxPython.
+
+Se surgir alguma dúvida específica ou se tiver interesse em um tópico mais específico, sinta-se à vontade para perguntar!
